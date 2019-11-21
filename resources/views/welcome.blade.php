@@ -1,5 +1,5 @@
 @extends('layout.layout')
-<link rel="stylesheet" href="{{asset('css/media.css')}}" type="text/css" media="all and (max-width:900px)">
+<link rel="stylesheet" href="{{asset('public/css/media.css')}}" type="text/css" media="all and (max-width:900px)">
 @section('content')
 <wrapper>
     <div id="dws-slider" class="carousel slide" data-ride="carousel">
@@ -13,7 +13,7 @@
         <!--Обертка для слайдов-->
         <div class="carousel-inner" role="listbox">
             @foreach($sliders as $slider)
-            <div class="{{$slider->active}}"><img src="/img/slider/{{$slider->image}}" alt="Картинка 1">
+            <div class="{{$slider->active}}"><img src="public/img/slider/{{$slider->image}}" alt="Картинка 1">
                 <div class="carousel-caption">
                     <h3 class="text-uppercase">{{$slider->title}}</h3>
                     <p>{{$slider->text}}</p>
@@ -49,7 +49,7 @@
                             {{$service->name}}
                         </div>
                         <div class="post-img">
-                            <img src="img/services/{{$service->icon}}" alt="">
+                            <img src="public/img/services/{{$service->icon}}" alt="">
                         </div>
                         <div class="post-review"><h3><a></a></h3><p></p></div>
                     </div>
@@ -80,7 +80,7 @@
             <div class="col-md-6">
                 <div class="view view-tenth">
                     <div class="n-img-responsive1">
-                        <img src="img/product.png" />
+                        <img src="public/img/product.png" />
                         <div class="mask">
                             <h2>Программное обеспечение компании «1С»</h2>
                             <p>Бизнес вариант (большой и средний бизнес).
@@ -105,7 +105,7 @@
             <div class="col-md-6">
                 <div class="view view-tenth2">
                     <div class="n-img-responsive2">
-                        <img src="img/kassy.png" />
+                        <img src="public/img/kassy.png" />
                         <div class="mask2">
                             <h2>Торговое оборудование компании «АТОЛ»</h2>
                             <p>Бизнес вариант (большой и средний бизнес).
@@ -135,7 +135,7 @@
                 @foreach($clients as $client)
                 <div class="post-slide">
                     <div class="post-img2">
-                        <a href="{{$client->url}}"target="_blank"><img src="img/clients/{{$client->logo}}" alt="">
+                        <a href="{{$client->url}}"target="_blank"><img src="public/img/clients/{{$client->logo}}" alt="">
                         <h4>{{$client->name}}</h4></a>
                     </div>
                     <div class="post-review"><h3><a></a></h3><p></p></div>
@@ -169,7 +169,7 @@
         fullscreenControl: false
     });
     icon = DG.icon({
-        iconUrl: "{{asset('img/logoicon1.png')}}",
+        iconUrl: "{{asset('public/img/logoicon1.png')}}",
         iconSize: [32, 45]
     });
     DG.marker([55.185555, 61.362829], {

@@ -215,7 +215,7 @@
 			{{ csrf_field() }}
 	<div class="product">
 		<div class="product-image">
-			<img src="/img/catalog/{{$value['3']}}">
+			<img src="public/img/catalog/{{$value['3']}}">
 		</div>
 		<div class="product-details">
 			<h3 class="product-description">{{ $value['1'] }}</h3>

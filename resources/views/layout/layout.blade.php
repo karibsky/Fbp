@@ -4,79 +4,77 @@
     <meta charset=utf-8>
     <title>1С-ФБП</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="SHORTCUT ICON" href="{{asset('img/logoicon2.png')}}" type="image/x-icon">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css">
+    <link rel="SHORTCUT ICON" href="{{asset('public/img/logoicon2.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset('public/css/bootstrap.css')}}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css">
-
+    <link rel="stylesheet" href="{{url('public/css/style.css')}}" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-    <link rel="shortcut icon" href="{{asset('img/logoicon2.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('public/img/logoicon2.png')}}" type="image/x-icon">
     <link rel="shortcut icon" href="https://1c-fbp.ru/img/logoicon2.png">
     <meta name="keywords" content="1C,Автоматизация ,фабрика бизнес процессов,бизнес-процессы,кассы купить, 1с купить, программы 1с , автоматизация бизнеса , обслуживание 1с ,1с отчетность">
     <meta name="description" content="Бухгалтерские программы,Автоматизация бизнес-процессов,Автоматизация производственных процессов,автоматизация розничной торговли.">
 </head>
 <body>
- <nav class="navbar navbar-custom navbar-sticky-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Навигация</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"><img style="width: 160px;" src="{{asset('img/logo01.png')}}" alt="Logotip"></a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/">Главная</a></li>
-                <li ><a href="/catalog">Каталог</a></li>
-                <li><a class="contact-link" href="#">Контакты</a></li>
-                <li><a href="/promo">Акции</a></li>
-                @guest
-                <li><a href="{{url('login')}}">Войти</a></li>
-                @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} {{ Auth::user()->patronymic }}<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu">
-                        @if(Auth::user()->isAdmin)
-                        <li> 
-                            <a class="dropdown-item" href="/admin/stats">Админ Меню</a>
-                        </li>  
-                        <li>
-                            <a class="dropdown-item" href="{{ url('/cart') }}">Корзина</a>
-                        </li> 
-                        <li>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                            {{ __('Выйти') }}
+    <nav class="navbar navbar-custom navbar-sticky-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Навигация</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img style="width: 160px;" src="{{asset('public/img/logo01.png')}}" alt="Logotip"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Главная</a></li>
+                    <li ><a href="/catalog">Каталог</a></li>
+                    <li><a class="contact-link" href="#">Контакты</a></li>
+                    <li><a href="/promo">Акции</a></li>
+                    @guest
+                    <li><a href="{{url('login')}}">Войти</a></li>
+                    @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} {{ Auth::user()->patronymic }}<span class="caret"></span>
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                        </form>
-                    </li>     
-                    @endif                     
-                </ul>
-            </li>
-            @endguest 
-        </ul>
+                        <ul class="dropdown-menu" role="menu">
+                            @if(Auth::user()->isAdmin)
+                            <li> 
+                                <a class="dropdown-item" href="/admin/stats">Админ Меню</a>
+                            </li>  
+                            <li>
+                                <a class="dropdown-item" href="{{ url('cart') }}">Корзина</a>
+                            </li> 
+                            <li>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                {{ __('Выйти') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>     
+                        @endif                     
+                    </ul>
+                </li>
+                @endguest 
+            </ul>
+        </div>
     </div>
-</div>
 </nav>
-<script src="{{asset('js/jquery.js')}}"></script>
-<script src="{{asset('js/bootstrap.js')}}"></script>
+<script src="{{asset('public/js/jquery.js')}}"></script>
+<script src="{{asset('public/js/bootstrap.js')}}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 @yield('content')
 <div class="footer-content">
     <div class="container-fluid content-1">
         <div class="col-md-4">
             <div class="n-img-responsive1">
-                <img style="width: 180px;" src="{{asset('img/logo01.png')}}" alt="Logotip">
+                <img style="width: 180px;" src="{{asset('public/img/logo01.png')}}" alt="Logotip">
             </div>
         </div>
         <div class="col-md-4">
@@ -107,11 +105,10 @@
     });
 </script>
 <script type="text/javascript">
-            function show(state){
-                    document.getElementById('window').style.display = state;
-                    document.getElementById('wrap').style.display = state;
-            }
-            
-        </script>
+    function show(state){
+        document.getElementById('window').style.display = state;
+        document.getElementById('wrap').style.display = state;
+    }
+</script>
 </body>
 </html>

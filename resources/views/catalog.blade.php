@@ -38,7 +38,7 @@
 		<div class="col-md-4 col-sm-4">
 			<div class="product-dropdown-body">
 				<div class="product-img">
-					<img src="{{ asset('img/catalog/'.$catalog -> picture) }}"/>
+					<img src="{{ asset('public/img/catalog/'.$catalog -> picture) }}"/>
 					<div class="product-price">
 						<p class="product-dropdown-description">
 							{{$catalog -> description}}

@@ -5,13 +5,13 @@
     <title>1С-ФБП</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="SHORTCUT ICON" href="{{asset('img/logoicon2.png')}}" type="image/x-icon">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" type="text/css">
+    <link rel="SHORTCUT ICON" href="{{asset('public/img/logoicon2.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset('public/css/bootstrap.css')}}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('public/css/admin.css')}}" type="text/css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
-    <link rel="shortcut icon" href="{{asset('img/logoicon2.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('public/img/logoicon2.png')}}" type="image/x-icon">
     <meta name="keywords" content="1C,Автоматизация ,фабрика бизнес процессов,бизнес-процессы,кассы купить, 1с купить, программы 1с , автоматизация бизнеса , обслуживание 1с ,1с отчетность">
     <meta name="description" content="Бухгалтерские программы,Автоматизация бизнес-процессов,Автоматизация производственных процессов,автоматизация розничной торговли.">
 </head>
@@ -25,7 +25,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img style="width: 160px;" src="{{asset('img/logo01.png')}}" alt="Logotip"></a>
+            <a class="navbar-brand" href="/"><img style="width: 160px;" src="{{asset('public/img/logo01.png')}}" alt="Logotip"></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -88,6 +88,6 @@
         </div>
     </div>
 </div>
-<script src="{{asset('js/jquery.js')}}"></script>
-<script src="{{asset('js/bootstrap.js')}}"></script>
+<script src="{{asset('public/js/jquery.js')}}"></script>
+<script src="{{asset('public/js/bootstrap.js')}}"></script>
 </body>

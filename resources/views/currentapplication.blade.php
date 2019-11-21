@@ -9,7 +9,7 @@
 	            </div>
 				<div class="col-md-12">
 					<div class="n-img-responsive1">
-						<img src="/img/services/{{$current->picture}}">
+						<img src="../public/img/services/{{$current->picture}}">
 					</div>
 				</div>
 			</div>
